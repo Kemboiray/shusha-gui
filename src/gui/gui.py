@@ -7,6 +7,7 @@ from pathlib import Path
 # from tkinter import *
 # Explicit imports to satisfy Flake8
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
+from PIL import Image, ImageTk
 
 
 OUTPUT_PATH = Path(__file__).parent
@@ -24,7 +25,10 @@ window = Tk()
 window.geometry("864x605")
 window.configure(bg="wheat")
 window.title("shusha")
-window.iconbitmap("shusha.ico")
+# window.iconbitmap("shusha.ico")
+im = Image.open("shusha.ico")
+photo = ImageTk.PhotoImage(im)
+window.wm_iconphoto(True, photo)
 window.resizable(False, False)
 
 
