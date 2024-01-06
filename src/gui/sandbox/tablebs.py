@@ -12,9 +12,9 @@ coldata = [
 ]
 
 rowdata = [
-    ('A123', 'IzzyCo', 12),
-    ('A136', 'Kimdee Inc.', 45),
-    ('A158', 'Farmadding Co.', 36)
+    ("A123", "IzzyCo", 12),
+    ("A136", "Kimdee Inc.", 45),
+    ("A158", "Farmadding Co.", 36),
 ]
 
 dt = Tableview(
