@@ -1,6 +1,10 @@
 from pathlib import Path
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 from PIL import Image, ImageTk
+from ttkbootstrap.tableview import Tableview
+from ttkbootstrap.constants import *
+
+# import ttkbootstrap as ttk
 
 
 OUTPUT_PATH = Path(__file__).parent
@@ -11,10 +15,13 @@ def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
 
-window = Tk()
+# window = ttk.Window(
+#     title="shusha", iconphoto="shusha.ico", size=(864, 605), resizable=(False, False)
+# )
 
+window = Tk()
 window.geometry("864x605")
-window.configure(bg="wheat")
+window.configure(bg="#2A2E31")
 window.title("shusha")
 # window.iconbitmap("shusha.ico")
 im = Image.open("shusha.ico")
@@ -22,19 +29,18 @@ photo = ImageTk.PhotoImage(im)
 window.wm_iconphoto(True, photo)
 window.resizable(False, False)
 
+# canvas = Canvas(
+#     window,
+#     bg="gray22",
+#     height=605,
+#     width=864,
+#     bd=0,
+#     highlightthickness=0,
+#     relief="ridge",
+# )
 
-canvas = Canvas(
-    window,
-    bg="gray22",
-    height=605,
-    width=864,
-    bd=0,
-    highlightthickness=0,
-    relief="ridge",
-)
-
-canvas.place(x=0, y=0)
-canvas.create_rectangle(0.0, 541.0, 864.0, 605.0, fill="#2A2E31", outline="")
+# canvas.place(x=0, y=0)
+# canvas.create_rectangle(0.0, 541.0, 864.0, 605.0, fill="#2A2E31", outline="")
 
 slider_img = PhotoImage(file=relative_to_assets("icons8-slider-64.png"))
 slider_btn = Button(
@@ -74,7 +80,7 @@ play2_btn.place(x=230.0, y=548.0, width=50.0, height=50.0)
 entry_1 = Entry(bd=0, bg="#D9D9D9", fg="#000716", highlightthickness=0)
 entry_1.place(x=10.0, y=557.5, width=210.0, height=30.0)
 
-canvas.create_rectangle(0.0, 0.0, 864.0, 64.0, fill="#2A2E31", outline="")
+# canvas.create_rectangle(0.0, 0.0, 864.0, 64.0, fill="#2A2E31", outline="")
 
 settings_img = PhotoImage(file=relative_to_assets("icons8-slider_2-64.png"))
 settings_btn = Button(
