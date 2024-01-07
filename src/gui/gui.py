@@ -1,6 +1,7 @@
 from pathlib import Path
-from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
+from tkinter import ttk, Tk, Entry, Text, Button, PhotoImage
 from PIL import Image, ImageTk
+from ttkbootstrap import style
 from ttkbootstrap.tableview import Tableview
 from ttkbootstrap.constants import *
 
@@ -156,4 +157,30 @@ add_btn = Button(
     relief="flat",
 )
 add_btn.place(x=10.0, y=7.0, width=50.0, height=50.0)
+
+style = ttk.Style()
+style.configure("TTreeview", background="#2A2E31", foreground="white")
+coldata = [
+    {"text": "LicenseNumber", "stretch": False},
+    "CompanyName",
+    {"text": "UserCount", "stretch": False},
+]
+
+rowdata = [
+    ("A123", "IzzyCo", 12),
+    ("A136", "Kimdee Inc.", 45),
+    ("A158", "Farmadding Co.", 36),
+]
+
+dt = Tableview(
+    master=window,
+    coldata=coldata,
+    rowdata=rowdata,
+    paginated=True,
+    searchable=True,
+    bootstyle="TTreeview",
+)
+# stripecolor=(colors.light, None),
+
+dt.place(x=0, y=64, width=864, height=477)
 window.mainloop()
