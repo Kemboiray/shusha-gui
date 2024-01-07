@@ -178,7 +178,7 @@ dt = Tableview(
     rowdata=rowdata,
     paginated=True,
     searchable=True,
-    bootstyle="TTreeview",
+    # bootstyle="outline-dark",
 )
 # stripecolor=(colors.light, None),
 
